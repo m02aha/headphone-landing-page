@@ -9,8 +9,7 @@ let menu = document.querySelectorAll(".menu a");
 const sections = Array.from(document.querySelectorAll("section"));
 
   // tasks (30m):
-//1. chcek if the menu toggle constants exists 
-  // 2.do the toggle active function 
+
   function toggleClass(element,className,condition){
     if(condition){
       element.classList.add(className);
@@ -19,8 +18,6 @@ const sections = Array.from(document.querySelectorAll("section"));
     }
   }
 
-// 4 apply on the links to close the menue 
-//6 change the color of the links in the nav bar 
 
 
 
@@ -82,6 +79,7 @@ section.classList.add("active");
 // scroll to activate section 
 
 function scrollActive(){
+
 const scrolly=window.scrollY;
 sections.forEach((current)=>{
   const sectionHeight=current.offsetHeight;
@@ -90,8 +88,13 @@ sections.forEach((current)=>{
   // console.log(sectionHeight);
   // console.log(sectionTop);
   // console.log(sectionId);
-  toggleClass(document.querySelector('.menu a[href*='+ sectionId +']' ),'active',
-  scrolly > sectionTop && scrolly < sectionTop +sectionHeight); ///
+// 1. Store the element in a variable
+    const navLink = document.querySelector('.menu a[href*=' + sectionId + ']');
+
+    // 2. Only call toggleClass if the link actually exists in the nav
+    if (navLink) {
+      toggleClass(navLink, 'active', scrolly > sectionTop && scrolly <= sectionTop + sectionHeight);
+    }
 })
 
 }
