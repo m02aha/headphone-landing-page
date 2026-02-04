@@ -25,8 +25,8 @@ const sections = Array.from(document.querySelectorAll("section"));
 
 
 
-console.log(menuToggle);
-console.log(nav);
+// console.log(menuToggle);
+// console.log(nav);
 
 // check if toggle exist 
 if(menuToggle){
@@ -67,7 +67,7 @@ window.addEventListener('scroll',toUpScroll);
 
 // add active and remove from section 
 let navLi=Array.from(document.querySelectorAll(".menu li a"));
-console.log(navLi);
+// console.log(navLi);
 
 function activate(section){
 navLi.forEach((e)=>{
@@ -77,7 +77,7 @@ navLi.forEach((e)=>{
 section.classList.add("active");
 
 }
-console.log(document.getElementById("case"));
+// console.log(document.getElementById("case"));
 
 // scroll to activate section 
 
@@ -87,9 +87,9 @@ sections.forEach((current)=>{
   const sectionHeight=current.offsetHeight;
   const sectionTop = current.offsetTop - 50;///
   const sectionId = current.getAttribute("id");
-  console.log(sectionHeight);
-  console.log(sectionTop);
-  console.log(sectionId);
+  // console.log(sectionHeight);
+  // console.log(sectionTop);
+  // console.log(sectionId);
   toggleClass(document.querySelector('.menu a[href*='+ sectionId +']' ),'active',
   scrolly > sectionTop && scrolly < sectionTop +sectionHeight); ///
 })
